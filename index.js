@@ -22,12 +22,17 @@ class Octopus {
         svgRootElement.appendChild(octopusElement)
 
         // CONFIGURABLE CONSTANTS
-        svgRootElement.setAttribute("viewBox", "0 0 160 100")
-        const squareSz = 10;
+        const scaleIfTooBig = true
+        const width = 200
+        const height = 100
+        const defaultSquareW = 5;
+        const defaultSquareH = 10;
         const spaceBetweenLegs = 1;
-        const spaceBeforeFirstLeg = 0.1;
+        const spaceBeforeFirstLeg = 0.5;
 
-        // top left square point
+        svgRootElement.setAttribute("viewBox", `0 0 ${width} ${height}`)
+
+        // point to last rendered square top left corner
         let curSquareX = 0;
         let curSquareY = 0;
 
@@ -37,6 +42,12 @@ class Octopus {
 
             for (var j = 0; j < leg.squares.length; j++) {
                 let square = leg.squares[j];
+
+                let w = defaultSquareW
+                if (square.w != undefined) {
+                    w = square.w
+                }
+                let h = defaultSquareH
 
                 if (!years.includes(square.year)) {
                     continue;
@@ -49,15 +60,15 @@ class Octopus {
                 squareElement.setAttribute("class", "unit");
                 squareElement.setAttribute("fill", square.color);
                 squareElement.setAttribute("fill-opacity", square.opacity);
-                squareElement.setAttribute("x", curSquareX);
+                squareElement.setAttribute("x", curSquareX - w);
                 squareElement.setAttribute("y", curSquareY);
-                squareElement.setAttribute("width", squareSz);
-                squareElement.setAttribute("height", squareSz);
+                squareElement.setAttribute("width", w);
+                squareElement.setAttribute("height", h);
                 squareElement.addEventListener("mouseover", showSquareTooltipCallback(squareElement, tooltipElement, square.description));
                 squareElement.addEventListener("mouseout", hideTooltipCallback(tooltipElement));
                 octopusElement.appendChild(squareElement);
 
-                curSquareX -= squareSz;
+                curSquareX -= w;
             }
 
             if (legEmpty) {
@@ -69,18 +80,18 @@ class Octopus {
             legTitleElement.setAttribute("class", "leg-title")
             legTitleElement.innerHTML = leg.title
             legTitleElement.setAttribute("text-anchor", "end")
-            legTitleElement.setAttribute("x", curSquareX + squareSz / 1.3)
-            legTitleElement.setAttribute("y", curSquareY + squareSz / 1.8)
+            legTitleElement.setAttribute("x", curSquareX - 2)
+            legTitleElement.setAttribute("y", curSquareY + defaultSquareH / 1.8)
             octopusElement.appendChild(legTitleElement)
 
 
             curSquareX = 0
-            curSquareY += (squareSz + spaceBetweenLegs);
+            curSquareY += (defaultSquareH + spaceBetweenLegs);
         }
 
         // create octopus head
         let legsHeight = (curSquareY - spaceBetweenLegs)
-        let headX = squareSz
+        let headX = 0
         let headY = -spaceBeforeFirstLeg
         let headHeight = legsHeight + spaceBeforeFirstLeg * 2
         let headWidth = headHeight * headRatio
@@ -95,7 +106,11 @@ class Octopus {
 
         // align octopus to be at the center of parent svg
         let bb = octopusElement.getBBox()
-        octopusElement.setAttribute("transform", "translate(" + (-bb.x) + ", " + (-bb.y) + ")")
+        let scale = 1
+        if (width < bb.width && scaleIfTooBig) {
+            scale = width / (bb.width + 15)
+        }
+        octopusElement.setAttribute("transform", `scale(${scale},${scale}) translate(${-bb.x},${-bb.y})`)
     }
 }
 
@@ -109,7 +124,7 @@ function showSquareTooltipCallback(squareElement, tooltipElement, tooltip) {
         var squareRect = squareElement.getBoundingClientRect();
         squareMid = (squareRect.left + squareRect.right) / 2
         tooltipElement.style.left = (squareMid - tooltipRect.width / 2) + "px"
-        tooltipElement.style.top = (squareRect.top - tooltipRect.height - 10) + "px";
+        tooltipElement.style.top = (squareRect.top - tooltipRect.height - 10 + window.scrollY) + "px";
     }
 }
 
