@@ -1,0 +1,143 @@
+.container {
+    width: 60%;
+    margin: auto;
+    /* background: #fc0; */
+}
+
+.unit:hover {
+    fill: #ff9999;
+    /* fill-opacity: 0.3; */
+    margin: 0;
+}
+
+.row {
+    display: flex;
+    /* justify-content: left;  */
+}
+
+.col1 {
+    /* padding: 10px; */
+    width: 50%;
+    /* text-align: left; */
+    float: left;
+    background: rgb(255, 123, 0);
+}
+
+.col2 {
+    width: 50%;
+    /* text-align: center; */
+    float: right;
+    background: rgb(18, 161, 66)
+}
+
+a {
+    /* text-decoration: none;
+    outline: none;
+    display: inline-block; */
+    width: 50px;
+    /* height: 45px; */
+    line-height: 50px;
+    border-radius: 50px;
+    /* margin: 10px 20px; */
+    margin-top: 10%;
+    margin-block-end: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    text-transform: uppercase;
+    text-align: center;
+    /* letter-spacing: 0.5px; */
+    font-weight: 600;
+    /* color: #524f4e; */
+    color: #524f4e;
+    background: white;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, .1);
+    transition: .3s;
+}
+
+a:hover {
+    /* background: rgb(44, 185, 99);
+  box-shadow: 0 15px 20px rgba(3, 109, 44, 0.4);  */
+    background: #545e6b;
+    box-shadow: 0 15px 20px rgba(16, 30, 51, 0.4);
+    color: white;
+    transform: translateY(-7px);
+}
+
+#btn-2014.pressed {
+    background: #545e6b;
+    color: white;
+    box-shadow: 0 15px 20px rgba(16, 30, 51, 0.4);
+}
+
+#btn-2015.pressed {
+    background: #545e6b;
+    color: white;
+    box-shadow: 0 15px 20px rgba(16, 30, 51, 0.4);
+}
+
+#btn-2016.pressed {
+    background: #545e6b;
+    color: white;
+    box-shadow: 0 15px 20px rgba(16, 30, 51, 0.4);
+}
+
+#btn-2017.pressed {
+    background: #545e6b;
+    color: white;
+    box-shadow: 0 15px 20px rgba(16, 30, 51, 0.4);
+}
+
+#btn-2018.pressed {
+    background: #545e6b;
+    color: white;
+    box-shadow: 0 15px 20px rgba(16, 30, 51, 0.4);
+}
+
+#btn-2019.pressed {
+    background: #545e6b;
+    color: white;
+    box-shadow: 0 15px 20px rgba(16, 30, 51, 0.4);
+}
+
+#btn-2020.pressed {
+    background: #545e6b;
+    color: white;
+    box-shadow: 0 15px 20px rgba(16, 30, 51, 0.4);
+}
+
+#tooltip {
+    /* блок для текста */
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    font-size: 10pt;
+    background-color: white;
+    border-radius: 6px;
+    position: absolute;
+    display: none;
+}
+
+#tooltip::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 50%;
+    top: 100%;
+    margin-left: -10px;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid white;
+}
+
+.leg-title {
+    /* название навыка */
+    font-family: Arial, sans-serif;
+    font-size: 2pt;
+}
+
+#octopus {
+    padding-top: 3%;
+    padding-left: 3%;
+}
