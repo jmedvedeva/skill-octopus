@@ -24,8 +24,8 @@ class Octopus {
         // CONFIGURABLE CONSTANTS
         const scaleIfTooBig = true
         const width = 200
-        const height = 100
-        const defaultSquareW = 5;
+        const height = 150
+        const defaultSquareW = 10;
         const defaultSquareH = 10;
         const spaceBetweenLegs = 1;
         const spaceBeforeFirstLeg = 0.5;
@@ -68,7 +68,7 @@ class Octopus {
                 squareElement.addEventListener("mouseout", hideTooltipCallback(tooltipElement));
                 octopusElement.appendChild(squareElement);
 
-                curSquareX -= w;
+                curSquareX -= w + 0.1;
             }
 
             if (legEmpty) {
@@ -186,6 +186,72 @@ function setupOctopus() {
 
             { year: 2019, description: '<p>Лекция подготовительной школы Бюро Горбунова "Управление собой. Как находить время, справляться с задачами..."</p><p>1-7 марта 2019</p>', color: "#346b99", opacity: "0.85" },
             { year: 2016, description: '<p>Погружение в работу. Стажировка в FORMA"</p><p>июль 2016</p>', color: "#346b99", opacity: "0.4" },
+        ]),
+
+        new Leg('Стойкость к критике', [
+            {
+                year: 2020, description: '<p>Критика по дипломному проекту в мою сторону. Если пройду на 3 ступень</p><p> апрель-май 2020</p>',
+                color: "#346b99", opacity: "1"
+            },
+            {
+                year: 2020, description: '<p>Критика по практике в мою сторону в шк Бюро Горбунова.</p><p> март 2020</p>',
+                color: "#346b99", opacity: "1"
+            },
+            {
+                year: 2020, description: '<p>Критика по практике в мою сторону в шк Бюро Горбунова.</p><p> февраль 2020</p>',
+                color: "#346b99", opacity: "1"
+            },
+            {
+                year: 2020, description: '<p>Критика по практике в мою сторону в шк Бюро Горбунова. Если перейду на 2 ступень </p><p> январь 2020</p>',
+                color: "#346b99", opacity: "1"
+            },
+
+            { year: 2018, description: '<p>Критика во время дипломного проекта"</p><p>февраль-июнь 2019</p>', color: "#346b99", opacity: "0.7" },
+            {
+                year: 2017,
+                description: '<p>Критика во время дизайн-проекта токарного станка</p> <p>сентябрь-декабрь 2017</p>',
+                color: "#346b99", opacity: "0.55"
+            },
+            {
+                year: 2017,
+                description: '<p>Критика по дизайн-проекту timescope и ребризера</p> <p>февраль-май 2017</p>',
+                color: "#346b99", opacity: "0.55"
+            },
+            {
+                year: 2016,
+                description: '<p>Критика по дизайн-проекту ребризера(подводного дыхательного аппарата) для детей </p> <p>сентябрь-декабрь 2016</p>',
+                color: "#346b99", opacity: "0.4"
+            },
+            {
+                year: 2016,
+                description: '<p>Критика по дизайн-проекту походной кружки 2к 2сем</p><p>февраль-май 2016</p>',
+                color: "#346b99", opacity: "0.4"
+            },
+            {
+                year: 2016,
+                description: '<p>Критика по дизайн-проекту штабелера 2к 2сем</p><p>февраль-май 2016</p>',
+                color: "#346b99", opacity: "0.4"
+            },
+            {
+                year: 2015,
+                description: '<p>Критика по дизайн-проекту самоката 2к 1сем</p>  <p>сентябрь-декабрь 2015</p>',
+                color: "#346b99", opacity: "0.25"
+            },
+            {
+                year: 2015,
+                description: '<p>Критика по дизайн-проекту ледоскалывателя 2к 1сем</p> <p>сентябрь-декабрь 2015</p>',
+                color: "#346b99", opacity: "0.25"
+            },
+            {
+                year: 2015,
+                description: '<p>Критика по дизайн-проекту бытовых тисков 1к 2сем</p> <p>февраль-май 2015</p>',
+                color: "#346b99", opacity: "0.25"
+            },
+            {
+                year: 2014,
+                description: '<p>Критика по проекту утюга 1ого курса 1 семестра</p><p>сентябрь-декабрь 2014</p>',
+                color: "#346b99", opacity: "0.1"
+            },
 
         ]),
         new Leg('Типографика и вёрстка', [
@@ -233,6 +299,10 @@ function setupOctopus() {
 
         ]),
         new Leg('Информационный дизайн', [
+            {
+                year: 2020, description: '<p>Изучить Sketch/Figma</p><p> апрель-май 2020</p>',
+                color: "#346b99", opacity: "1"
+            },
             {
                 year: 2020, description: '<p>Дипломный проект Бюро Горбунова. Если пройду на 3 ступень</p><p> апрель-май 2020</p>',
                 color: "#346b99", opacity: "1"
@@ -295,6 +365,10 @@ function setupOctopus() {
 
         ]),
         new Leg('Графический дизайн', [
+            {
+                year: 2020, description: '<p>Изучить лучше Photoshop</p><p> 2019-2020</p>',
+                color: "#346b99", opacity: "1"
+            },
             {
                 year: 2019, description: '<p>Лекии в подг. шк. Бюро Горбунова. Основы Фотошопа: макет, текст, работа с иллюстрациями</p> <p>1-7 марта 2019</p>',
                 color: "#346b99", opacity: "0.85"
@@ -574,17 +648,17 @@ function setupOctopus() {
             },
             {
                 year: 2019,
-                description: '<p>Лекции и лабы в универе</p><p>февраль-май</p>',
+                description: '<p>Лекции и лабы в универе</p><p>февраль-май 2019</p>',
                 color: "#346b99", opacity: "0.85"
             },
             {
                 year: 2018,
-                description: '<p>Подготовка к ЕГЭ. Книга "Как всё работает", лекции на youtube</p><p>январь-июнь</p>',
+                description: '<p>Подготовка к ЕГЭ. Книга "Как всё работает", лекции на youtube</p><p>январь-июнь 2018</p>',
                 color: "#346b99", opacity: "0.7"
             },
             {
                 year: 2017,
-                description: '<p>Лекции на youtube</p>',
+                description: '<p>Лекции на youtube</p> <p>сентябрь-декабрь 2017</p>',
                 color: "#346b99", opacity: "0.55"
             },
 
@@ -594,7 +668,6 @@ function setupOctopus() {
                 year: 2020, description: '<p>Курс на Stepic Введение в математический анализ</p><p> 2020</p>',
                 color: "#346b99", opacity: "1"
             },
-
             {
                 year: 2020, description: '<p>Лекции и практика в универе</p><p> 2019-2020</p>',
                 color: "#346b99", opacity: "1"
@@ -619,12 +692,8 @@ function setupOctopus() {
                 description: '<p>Подготовка к ЕГЭ</p><p>январь-июнь</p>',
                 color: "#346b99", opacity: "0.7"
             },
-
-
-        ]),
-
+        ])
     ]);
-
     return o
 }
 

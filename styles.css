@@ -1,44 +1,33 @@
 .container {
     width: 60%;
     margin: auto;
-    /* background: #fc0; */
 }
 
 .unit:hover {
     fill: #ff9999;
-    /* fill-opacity: 0.3; */
     margin: 0;
 }
 
 .row {
     display: flex;
-    /* justify-content: left;  */
 }
 
 .col1 {
-    /* padding: 10px; */
     width: 50%;
-    /* text-align: left; */
     float: left;
     background: rgb(255, 123, 0);
 }
 
 .col2 {
     width: 50%;
-    /* text-align: center; */
     float: right;
     background: rgb(18, 161, 66)
 }
 
 a {
-    /* text-decoration: none;
-    outline: none;
-    display: inline-block; */
     width: 50px;
-    /* height: 45px; */
     line-height: 50px;
     border-radius: 50px;
-    /* margin: 10px 20px; */
     margin-top: 10%;
     margin-block-end: 20%;
     margin-left: auto;
@@ -47,9 +36,7 @@ a {
     font-size: 18px;
     text-transform: uppercase;
     text-align: center;
-    /* letter-spacing: 0.5px; */
     font-weight: 600;
-    /* color: #524f4e; */
     color: #524f4e;
     background: white;
     box-shadow: 0 8px 15px rgba(0, 0, 0, .1);
@@ -57,52 +44,56 @@ a {
 }
 
 a:hover {
-    /* background: rgb(44, 185, 99);
-  box-shadow: 0 15px 20px rgba(3, 109, 44, 0.4);  */
-    background: #545e6b;
+    background: #346b99;
     box-shadow: 0 15px 20px rgba(16, 30, 51, 0.4);
     color: white;
     transform: translateY(-7px);
 }
 
 #btn-2014.pressed {
-    background: #545e6b;
+    background: #346b99;
+    opacity: 0.1;
     color: white;
     box-shadow: 0 15px 20px rgba(16, 30, 51, 0.4);
 }
 
 #btn-2015.pressed {
-    background: #545e6b;
+    background: #346b99;
+    opacity: 0.25;
     color: white;
     box-shadow: 0 15px 20px rgba(16, 30, 51, 0.4);
 }
 
 #btn-2016.pressed {
-    background: #545e6b;
+    background: #346b99;
+    opacity: 0.4;
     color: white;
     box-shadow: 0 15px 20px rgba(16, 30, 51, 0.4);
 }
 
 #btn-2017.pressed {
-    background: #545e6b;
+    background: #346b99;
+    opacity: 0.5;
     color: white;
     box-shadow: 0 15px 20px rgba(16, 30, 51, 0.4);
 }
 
 #btn-2018.pressed {
-    background: #545e6b;
+    background: #346b99;
+    opacity: 0.7;
     color: white;
     box-shadow: 0 15px 20px rgba(16, 30, 51, 0.4);
 }
 
 #btn-2019.pressed {
-    background: #545e6b;
+    background: #346b99;
+    opacity: 0.8;
     color: white;
     box-shadow: 0 15px 20px rgba(16, 30, 51, 0.4);
 }
 
 #btn-2020.pressed {
-    background: #545e6b;
+    background: #346b99;
     color: white;
     box-shadow: 0 15px 20px rgba(16, 30, 51, 0.4);
 }
@@ -133,11 +124,28 @@ a:hover {
 
 .leg-title {
     /* название навыка */
-    font-family: Arial, sans-serif;
-    font-size: 2pt;
+    /* font-family: Arial, sans-serif; */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3pt;
 }
 
 #octopus {
     padding-top: 3%;
     padding-left: 3%;
+}
+
+.footer {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 8pt;
+    position: fixed;
+    /* Фиксированное положение */
+    left: 0;
+    bottom: 0;
+    /* Правый нижний угол */
+    background: #fff;
+    /* Цвет фона */
+    color: #545e6b;
+    /* Цвет текста */
+    width: 100%;
+    /* Ширина слоя */
 }
