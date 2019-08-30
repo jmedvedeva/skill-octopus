@@ -722,8 +722,8 @@ function main() {
     let octopusSvg = document.getElementById("octopus");
     let octopus = setupOctopus();
 
-    octopus.render(octopusSvg, [2014, 2015, 2016, 2017, 2018, 2019, 2020], 'head3-01.png', 0.795);
-    toggleButtons(2020)
+    octopus.render(octopusSvg, [2014], 'head1-01.png', 0.498);
+    toggleButtons(2014)
 
     buttons["2014"].onclick = function (e) {
         toggleButtons(2014)
